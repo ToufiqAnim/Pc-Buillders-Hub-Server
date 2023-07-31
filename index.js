@@ -36,7 +36,7 @@ const run = async () => {
     app.get("/products/:id", async (req, res) => {
       const id = req.params.id;
       const product = await productCollection.findOne({
-        _id: ObjectId(id),
+        _id: new ObjectId(id),
       });
       res.send({ status: true, data: product });
     });
